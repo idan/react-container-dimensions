@@ -79,7 +79,7 @@ describe('react-container-dimensions', () => {
         })
 
         expect(wrapper.find(ContainerDimensions)).to.have.exactly(1).descendants('div')
-        expect(wrapper).to.have.html('<div></div>')
+        expect(wrapper).to.have.html('<div data-reactroot=""></div>')
         expect(wrapper.find(MyComponent).length).to.eq(0)
 
         wrapper.setState({
@@ -144,7 +144,8 @@ describe('react-container-dimensions', () => {
                 </ContainerDimensions>
             </h1>
         )
-        expect(wrapper).to.have.html('<h1><span width="0" height="0">Test</span><div' +
+        expect(wrapper).to.have.html('<h1 data-reactroot="">' +
+            '<span width="0" height="0">Test</span><div' +
             ' class="erd_scroll_detection_container' +
             ' erd_scroll_detection_container_animation_active" style="visibility: hidden;' +
             ' display: inline; width: 0px; height: 0px; z-index: -1; overflow:' +
